@@ -2,9 +2,11 @@
 Server entry point
 """
 
-
 import socket
 import threading
+
+from networking.netcode import *
+from networking.packet import *
 
 PORT = 9521
 SERVER = "0.0.0.0"
@@ -28,13 +30,11 @@ def handle_client(connection, address):
     print(f"{address} connected")
     is_connected = True
     while is_connected:
-        message = connection.recv(HEADER).decode(FORMAT)
+        message = connection.recv(HEADER_SIZE).decode('utf-8')
         if len(message) > 0:
             message_length = int(message)
-            message = connection.recv(message_length).decode(FORMAT)
-            if message == DISCONNECT_MESSAGE:
-                is_connected = False
-            print(f"{address} -> {message}")
+            message = connection.recv(message_length).decode('utf-8')
+            print(f"{address} -> [{message_length}]{message}")
     connection.close()
 
 
