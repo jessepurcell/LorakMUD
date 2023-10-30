@@ -7,6 +7,9 @@ class BaseScene:
     def __init__(self):
         pass
 
+    def __str__(self):
+        return f"{type(self)}"
+
     def create(self):
         pass
 
