@@ -1,7 +1,7 @@
 """
 Base room class
 """
-from entity import Entity
+from core.entity import Entity
 
 
 class Room:
