@@ -1,11 +1,12 @@
 """
 Base scene class
 """
+from core.entity_manager import EntityManager
 
 
 class BaseScene:
     def __init__(self):
-        pass
+        self._entity_manager = EntityManager()
 
     def __str__(self):
         return f"{type(self)}"

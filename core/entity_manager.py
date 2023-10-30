@@ -1,23 +1,25 @@
 """
 Entity manager
 """
+import pygame.sprite
+
 from entity import Entity
 
 
 class EntityManager:
-    _entities = []
-
     def __init__(self):
-        pass
+        self._entities = pygame.sprite.Group()
 
     def update(self):
         pass
 
     def render(self):
-        pass
+        for entity in self._entities:
+            entity.blit(entity.surf, entity.rect)
 
     def add_entity(self, entity):
-        self._entities.append(entity)
+        self._entities.add(entity)
 
     def remove_entity(self, entity):
-        self._entities.remove(entity)
+        # self._entities.remove(entity)
+        entity.kill()
