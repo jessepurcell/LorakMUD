@@ -2,25 +2,45 @@
 Game class
 Handles general game boilerplate
 """
+import pygame
+
+from core.scene_manager import SceneManager
 from scene import BaseScene
+from pygame import locals
 
 
 class Game:
-    _current_scene: BaseScene = None
+    FRAME_RATE = 60
+    _scene_manager = SceneManager()
+    _is_running = False
 
-    def __init__(self, window_size, window_title, scene):
-        self.window_size = window_size
-        self.window_title = window_title
-        self.change_scene(scene)
+    def __init__(self, window_size):
+        self._window = pygame.display.set_mode(window_size)
+        self._clock = pygame.time.Clock()
+
+    def run(self, new_scene: BaseScene):
+        print("Game starting...")
+        print(f"Loading {new_scene}")
+        self._scene_manager.change_scene(new_scene)
+        self._is_running = True
+        while self._is_running:
+            for event in pygame.event.get():
+                match event.type:
+                    case locals.K_ESCAPE:
+                        self._is_running = False
+                    case locals.QUIT:
+                        self._is_running = False
+
+            pressed_keys = pygame.key.get_pressed()
+
+            self.update()
+            self._window.fill((0, 0, 0))
+            self.render()
+            pygame.display.flip()
+            self._clock.tick(self.FRAME_RATE)
 
     def update(self):
-        pass
+        self._scene_manager.update()
 
     def render(self):
-        pass
-
-    def change_scene(self, new_scene: BaseScene):
-        if self._current_scene is not None:
-            self._current_scene.cleanup()
-        self._current_scene = new_scene
-        self._current_scene.initialize()
+        self._scene_manager.render()
