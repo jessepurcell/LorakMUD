@@ -5,7 +5,7 @@ Handles general game boilerplate
 import pygame
 
 from core.scene_manager import SceneManager
-from scene import BaseScene
+from core.scene import BaseScene
 from pygame import locals
 
 

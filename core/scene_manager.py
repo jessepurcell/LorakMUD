@@ -1,7 +1,7 @@
 """
 Manages scenes
 """
-from scene import BaseScene
+from core.scene import BaseScene
 
 
 class SceneManager:

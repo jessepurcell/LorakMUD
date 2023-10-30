@@ -3,7 +3,7 @@ Entity manager
 """
 import pygame.sprite
 
-from entity import Entity
+from core.entity import Entity
 
 
 class EntityManager:
@@ -17,9 +17,9 @@ class EntityManager:
         for entity in self._entities:
             entity.blit(entity.surf, entity.rect)
 
-    def add_entity(self, entity):
+    def add_entity(self, entity: Entity):
         self._entities.add(entity)
 
-    def remove_entity(self, entity):
+    def remove_entity(self, entity: Entity):
         # self._entities.remove(entity)
         entity.kill()
