@@ -13,8 +13,8 @@ class SceneManager:
     def update(self):
         self._current_scene.update()
 
-    def render(self):
-        self._current_scene.render()
+    def render(self, window):
+        self._current_scene.render(window)
 
     def change_scene(self, new_scene):
         if self._current_scene is not None:

@@ -15,10 +15,10 @@ class BaseScene:
         pass
 
     def update(self):
-        pass
+        self._entity_manager.update()
 
-    def render(self):
-        pass
+    def render(self, window):
+        self._entity_manager.render(window)
 
     def destroy(self):
         pass

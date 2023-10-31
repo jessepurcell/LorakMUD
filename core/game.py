@@ -43,4 +43,4 @@ class Game:
         self._scene_manager.update()
 
     def render(self):
-        self._scene_manager.render()
+        self._scene_manager.render(self._window)

@@ -13,11 +13,11 @@ class EntityManager:
     def update(self):
         pass
 
-    def render(self):
+    def render(self, window):
         for entity in self._entities:
-            entity.blit(entity.surf, entity.rect)
+            window.blit(entity.surf, entity.rect)
 
-    def add_entity(self, entity: Entity):
+    def add_entity(self, entity):
         self._entities.add(entity)
 
     def remove_entity(self, entity: Entity):
