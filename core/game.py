@@ -16,6 +16,7 @@ class Game:
 
     def __init__(self, window_size):
         self._window = pygame.display.set_mode(window_size)
+        pygame.display.set_caption("Lorak")
         self._clock = pygame.time.Clock()
 
     def run(self, new_scene: BaseScene):
