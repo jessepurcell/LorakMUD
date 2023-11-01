@@ -2,7 +2,6 @@
 Base scene class
 """
 from core.entity_manager import EntityManager
-from core.tileset import Tileset
 
 
 class BaseScene:
