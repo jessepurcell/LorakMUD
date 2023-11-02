@@ -15,8 +15,8 @@ class Tileset:
     def load(self):
         width, height = self.rect.size
         tile_width, tile_height = self.tile_size
-        for x in range(0, width, tile_width):
-            for y in range(0, height, tile_height):
+        for y in range(0, height, tile_height):
+            for x in range(0, width, tile_width):
                 tile = pygame.Surface(self.tile_size)
                 tile.blit(self.image, (0, 0), (x, y, *self.tile_size))
                 tile = pygame.transform.scale(tile, (tile_width * self.tile_scale, tile_height * self.tile_scale))
