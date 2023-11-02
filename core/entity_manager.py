@@ -19,6 +19,7 @@ class EntityManager:
 
     def add_entity(self, entity):
         self._entities.add(entity)
+        return entity
 
     def remove_entity(self, entity: Entity):
         # self._entities.remove(entity)

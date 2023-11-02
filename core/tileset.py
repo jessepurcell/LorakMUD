@@ -3,7 +3,7 @@ import pygame.image
 
 
 class Tileset:
-    def __init__(self, filepath, tile_size=(32, 32), tile_scale=8):
+    def __init__(self, filepath, tile_size=(32, 32), tile_scale=1):
         self.filepath = filepath
         self.tile_size = tile_size
         self.tile_scale = tile_scale

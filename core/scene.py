@@ -22,3 +22,6 @@ class BaseScene:
 
     def destroy(self):
         pass
+
+    def add_entity(self, entity):
+        self._entity_manager.add_entity(entity)
