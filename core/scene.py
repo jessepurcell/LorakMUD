@@ -1,12 +1,12 @@
 """
 Base scene class
 """
-from core.entity_manager import EntityManager
+from core.gameobject_manager import GameObjectManager
 
 
 class BaseScene:
     def __init__(self):
-        self._entity_manager = EntityManager()
+        self._gameobject_manager = GameObjectManager()
 
     def __str__(self):
         return f"{type(self)}"
@@ -15,13 +15,13 @@ class BaseScene:
         pass
 
     def update(self):
-        self._entity_manager.update()
+        self._gameobject_manager.update()
 
     def render(self, window):
-        self._entity_manager.render(window)
+        self._gameobject_manager.render(window)
 
     def destroy(self):
         pass
 
-    def add_entity(self, entity):
-        self._entity_manager.add_entity(entity)
+    def add_gameobject(self, gameobject):
+        self._gameobject_manager.add_gameobject(gameobject)
