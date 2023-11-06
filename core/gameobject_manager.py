@@ -11,7 +11,8 @@ class GameObjectManager:
         self._entities = pygame.sprite.Group()
 
     def update(self):
-        pass
+        for gameobject in self._entities:
+            gameobject.update()
 
     def render(self, window):
         for gameobject in self._entities:
