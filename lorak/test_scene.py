@@ -5,6 +5,7 @@ from core.scene import BaseScene
 from core.gameobject import GameObject
 from core.tileset import Tileset
 from core.zone import Zone
+from lorak.player import Player
 
 
 class TestScene(BaseScene):
@@ -21,6 +22,10 @@ class TestScene(BaseScene):
         # gameobject test
         self.test_go = GameObject(self.tileset.tiles[0])
         self.add_gameobject(self.test_go)
+
+        # player test
+        self.player = Player(self.tileset.tiles[11])
+        self.add_gameobject(self.player)
 
     def update(self):
         super().update()

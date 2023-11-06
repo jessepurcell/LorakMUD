@@ -13,7 +13,8 @@ class GameObject(pygame.sprite.Sprite):
 
     def update(self):
         """Run on an gameobject every frame"""
-        print("Updating gameobject")
+        # print("Updating gameobject")
+        pass
 
     def move(self, offset):
         """Move gameobject by given offset"""
